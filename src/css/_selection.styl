@@ -1,0 +1,151 @@
+#border-wrap
+  width 5px
+  height:inherit;
+  opacity 1
+  background-color: white
+.wrapper-card
+  overflow-y: hidden;
+  overflow-x: hidden;
+  display: flex
+  flex-direction: row
+  position: fixed;
+  left 50%
+  margin-left -25%
+  top 50%
+  margin-top -20%
+  z-index 10
+  height 60vh
+  width 50vw
+  align-items center
+  justify-content center
+  background white
+  border: 6px solid black
+  @media( max-width: 810px) {
+    width: 425px
+    margin-left none
+  }
+  @media(max-width 523px){
+    width 350px
+    position: absolute;
+    bottom 50%
+    margin-left -50%
+
+
+  }
+  .card
+    padding-left 10px
+    align-items center
+    color black
+    .card-content
+      display: flex
+      flex-direction: column;
+      h1
+        padding-top: 20px
+        color black
+        @media(max-width 1090px){
+          font-size: 1.2em
+          padding-top 20px
+          padding-left 100px
+          top 0
+          right 50%absolute;
+        }
+      div
+        ul
+         list-style none
+         display flex
+         flex-direction: row
+         align-items: center
+         justify-content:space-around;
+         @media(max-width: 1090px){
+           justify-content: space-between;
+           width 300px
+         }
+         li
+           a
+             @media(max-width: 1090px){
+               padding 5px 20px
+             }
+             color black
+             border 1px solid black
+             text-decoration none
+             background none
+             margin-left 30px
+             padding 10px 40px
+             font-size 1.5rem
+             &:hover
+               color white
+               background black
+        .skill
+           height 50px
+           width 50px
+           margin -40px 10px 10px 0px
+           @media(max-width 900px) {
+             display: inline-block;
+             height 25px
+             width 25px
+
+           }
+
+thumbs(el)
+  background: url(el)
+  background-size:cover;
+  color black
+  border: 2px solid black
+  height 200px
+  width 50%
+  margin 10px
+
+.thumbs
+  display: flex
+.thumb
+  thumbs("/thumbs/port1.jpg")
+.thumb2
+  thumbs("/thumbs/port2.jpg")
+.thumb3
+  thumbs("/thumbs/chaos1.jpg")
+.thumb4
+  thumbs("/thumbs/chaos2.jpg")
+.thumb5
+  thumbs("/thumbs/QT3.jpg")
+.thumb6
+  thumbs("/thumbs/QT2.jpg")
+.thumb7
+  thumbs("/thumbs/LO1.jpg")
+.thumb8
+  thumbs("/thumbs/LO2.jpg")
+
+#overlay
+  position fixed
+  z-index 9
+  background-color rgba(0, 0, 0, 0.5);
+  width 100vw
+  height 100vh
+  top 0
+  left 0
+.skill-logo
+  padding none
+  margin none
+  height 90px
+  width 90px
+  @media(max-width 1090px){
+    height 45px
+    width 45px
+  }
+
+.fa
+  padding-top: 20px
+  font-size: 2.5em
+
+
+
+.card-right-content
+  @media(max-width 1090px){
+    font-size 10px
+    max-width: 100%
+
+  }
+.card-right-button
+  a
+    @media(max-width 1090px){
+      width 20px
+    }

@@ -1,0 +1,158 @@
+phone = max-width 800px
+#fb, #cd, #gh
+  font-size: 1.2em
+
+#contact-page
+  position: absolute;
+  z-index: 100
+  display flex
+  flex-direction row
+  align-items center
+  @media(max-width 800px){
+    flex-direction: column;
+    }
+  #left-box
+    background white
+    border 5px solid black
+    width 50%
+    margin-left: -7px
+    display flex
+    justify-content center
+    align-items center
+    @media(max-width 800px)
+      width 100%
+      height 50%
+    #name-tag
+      display flex
+      flex-direction column
+      justify-content center
+      align-items left
+      background none
+      height 85vh
+      color black
+      width 50%
+      @media(max-width 800px){
+      }
+      ul
+        display flex
+        justify-content space-between
+        list-style none
+      #tag
+        font-variant small-caps
+        font-size 2.5rem
+        #name
+          font-weight bold
+      #title
+        margin-top -35px
+        font-size .8rem
+
+      p
+        font-size 1rem
+        span
+          font-weight bold
+          color black
+        a
+          text-decoration underline
+          color black
+          &:hover            
+            background black
+            color white
+            border-radius 2.5px
+  #reach
+    font-weight bold
+    color white
+#right-box-container
+  width 48vw
+  height 85vh
+  border 5px solid black
+  @media(max-width 800px){
+    width 100%
+    height 50%
+  }
+
+#right-box
+  border 5px solid white
+  display flex
+  justify-content center
+  align-items center
+  flex-direction column
+  width 100%
+  background-color: rgba(0,0,0,.95)
+  height 85vh
+  @media(max-width 800px){
+    width 100%
+    height 50%
+  }
+  #contact-heading
+    display flex
+    flex-direction column
+    justify-content center
+    align-items left
+    p
+      font-size 2.5rem
+      font-variant: small-caps;
+      color rgba(255,255,255,.75)
+    .subheading
+      color rgba(255,255,255,.75)
+      font-size .8rem
+      margin-top -35px
+  .socialLrg
+    font-size: 36px
+    a
+      text-decoration: none
+
+
+
+  #contact-form
+    display flex
+    flex-direction column
+    justify-content space-around
+
+    input
+      background none
+      color white
+      padding 20px
+      margin-bottom 10%
+      border 1px solid white
+    textarea
+      color white
+      padding-bottom 75px
+      background none
+      border 1px solid white
+      padding-left 20px
+      padding-top 20px
+    div
+      padding-top 40px
+      @media(max-width 800px){
+        margin-bottom 20px
+      }
+      a
+        text-decoration none
+        color white
+        padding 10px 20px 10px 20px
+        width 100px
+        background none
+        border 2px solid white
+        &:hover
+          background white
+          color black
+          font-weight: bold
+
+.socialLrg
+  font-size: 2em
+  a
+    text-decoration: none;
+
+
+.soc1 a
+  color black
+  &:hover
+    color #3B5998
+.soc2 a
+  color black
+  &:hover
+    color #71CB52
+.soc3 a
+  color black
+  &:hover
+    color lighten(gray, 36%)
