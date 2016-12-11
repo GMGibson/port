@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+var postmark = require("postmark")(process.env.POSTMARK_API_TOKEN)
+import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 class Contact extends Component {
   constructor() {
@@ -30,7 +32,21 @@ class Contact extends Component {
   handleFormSubmit(event) {
     event.preventDefault();
     const data = {name:this.state.name,email:this.state.email,msg:this.state.msg}
-    const dataContainer = JSON.stringify(data, null, "  ");
+    const env = runtimeEnv()
+    postmark.send({
+      "From":data.email,
+      "To": env.POSTMARK_INBOUND_ADDRESS,
+      "Subject":"ggdesign "+data.name,
+      "TextBody":data.msg
+    }, function(error, success) {
+      if(error){
+        console.error("Unable to send via postmark: " + error.message);
+        this.setState({name:'',email:'',msg:''})
+        return;
+      }
+      console.info("Sent to postmark for delivery")
+      this.setState({name:'',email:'',msg:''})
+    })
   }
 
   render() {
@@ -46,7 +62,7 @@ class Contact extends Component {
               <li className="socialLrg soc1"><a href="#" className="fa fa-facebook" id="fb"></a></li>
               <li className="socialLrg soc2"><a href="#" className="fa fa-github" id="gh"></a></li>
               <li className="socialLrg soc3"><a href="#" className="fa fa-codepen" id="cd"></a></li>
-              </ul>              
+              </ul>
           </div>
         </div>
         <div id="right-box-container">
