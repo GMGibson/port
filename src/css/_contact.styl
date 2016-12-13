@@ -191,10 +191,13 @@ phone = max-width 800px
     position: absolute;
     bottom 0
     cursor: pointer
-    margin-bottom 19px
+    margin-bottom 20%
+    @media(min-width 1235px){
+      margin-bottom 10%
+    }
     @media(max-width 425px){
-      margin-bottom 50px
-      margin-left 50px
+      margin-bottom 10px
+      margin-left 90px
     }
     text-decoration none
     color white
@@ -206,11 +209,7 @@ phone = max-width 800px
       background white
       color black
       font-weight: bold
-    @media(max-width 425px){
-      position absolute
-      right 1
-      width 50px
-    }
+
 
 .socialLrg
   font-size: 2em

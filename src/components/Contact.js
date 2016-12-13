@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 class Contact extends Component {
   constructor() {
     super()
@@ -30,18 +31,15 @@ class Contact extends Component {
   }
   handleFormSubmit(event) {
     event.preventDefault();
+    const env = process.env.NODE_ENV;
     axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
     const details = {name:this.state.name,email:this.state.email,msg:this.state.msg}
 
-    axios.post('/',{
-      details,
+    axios.post('http://postmail.invotes.com/send',{
+      "subject": `${details.name},${details.email} has contacted you from ggdesign.io`,
+      "text": `${details.msg}`,
+      "access_token": env.POSTMAIL_KEY
     })
-
-    // axios.post('/',{
-    //   "subject": `${details.name},${details.email} has contacted you from ggdesign.io`,
-    //   "text": `${details.msg}`,
-    //   "access_token": env.POSTMAIL_KEY
-    // })
   }
 
 

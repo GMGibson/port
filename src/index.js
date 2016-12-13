@@ -8,6 +8,7 @@ import AboutMe from './components/AboutMe';
 import Selection from './components/Selection';
 import Splash from './components/Splash';
 import Welcome from './components/Welcome';
+import NotFound from './components/NotFound';
 
 
 import './css/style.css';
@@ -23,6 +24,7 @@ const Root = () => {
         </Route>
         <Route path="/about" component={AboutMe} />
       </Route>
+      <Route path="*" component={NotFound} />
     </Router>
   )
 }
