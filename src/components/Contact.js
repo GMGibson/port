@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import runtimeEnv from '@mars/heroku-js-runtime-env';
 import axios from 'axios';
 
 
@@ -36,7 +35,6 @@ class Contact extends Component {
     axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
     const details = {name:this.state.name,email:this.state.email,msg:this.state.msg}
-    const env = runtimeEnv()
 
     axios({
       method: 'post',
@@ -44,7 +42,7 @@ class Contact extends Component {
       data: {
         "subject": `${details.name},${details.email} has contacted you from ggdesign.io`,
         "text": `${details.msg}`,
-        "access_token":env.POSTMAIL_KEY
+        "access_token":process.env.POSTMAIL_KEY
       }
     }).catch(function (error) {
       if (error.response) {
