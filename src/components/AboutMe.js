@@ -28,6 +28,7 @@ class AboutMe extends Component {
               <ul className="aboutDe">
                 <li>GreenSock</li>
                 <li>Adobe Illustrator</li>
+                <li>Affinity Designer</li>
                 <li>Adobe Photoshop</li>
               </ul>
             </section>
@@ -38,8 +39,7 @@ class AboutMe extends Component {
                 <li>CSS</li>
                 <li>JavaScript (ES6)</li>
                 <li>React</li>
-                <li>JQuery</li>
-                <li>GreenSock</li>
+                <li>JQuery</li>                
                 <li>Stylus</li>
                 <li>Sass</li>
               </ul>

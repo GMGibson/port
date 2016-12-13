@@ -35,7 +35,7 @@ class ProjectList extends Component {
       {name: 'modern layouts', image:"/LO.jpg", link: "/projects/layout", key: "4"},
       {name: 'portfolio', image:"/portThumb.jpg", link: "/projects/portfolio", key: "2"},
       {name: 'quicktube', image:"/thumbs/QT1.jpg", link: "/projects/cloneflix", key: "1"},
-      {name: 'chaos bag', image:"/chaos.jpg", link: "/projects/chaos", key: "3"}
+      {name: 'bag of chaos', image:"/chaos.jpg", link: "/projects/chaos", key: "3"}
 
     ]
     return (

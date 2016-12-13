@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "@mars/heroku-js-runtime-env": "^3.0.0",
+    "axios": "^0.15.3",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
-    "react-router": "^2.8.1"    
+    "react-router": "^2.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

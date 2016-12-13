@@ -38,7 +38,7 @@ class Selection extends Component {
     return (
      <div className="wrapper-card">
        <span id="border-wrap"></span>
-       <span className="wrapped-item">{focusedItem}</span>
+       <div className="wrapped-item">{focusedItem}</div>
      </div>
     )
   }
