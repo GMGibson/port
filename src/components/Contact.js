@@ -33,23 +33,24 @@ class Contact extends Component {
   }
   handleFormSubmit(event) {
     event.preventDefault();
+    axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
     const details = {name:this.state.name,email:this.state.email,msg:this.state.msg}
-    const env = runtimeEnv()
+    const env = runtimeEnv()      
 
-    window.TweenMax.set("#contact-form-button",{text:'Sending..'})
-
-    axios.post('https://postmail.invotes.com/send',{
-      "access_token":env.POSTMAIL_KEY,
-      "subject":"ggdesign.io " + details.email + "has sent you an email from "+details.name,
-      "message":details.msg
-    })
-    .then(function(response){
-      console.log(response)
-      window.TweenMax.set("#contact-form-button",{text:"Sent!"})
-    })
-    .catch(function(error){
-      console.log(error)
-    })}
+    axios({
+      method: 'post',
+      url:'https://postmail.invotes.com/send',
+      data: {
+        "subject": `${details.name},${details.email} has contacted you from ggdesign.io`,
+        "text": `${details.msg}`,
+        "access_token": `${POSTMAIL_KEY}`
+      }
+    }).catch(function (error) {
+      if (error.response) {
+        console.log(error.response.data);
+      }
+    });
 
   render() {
 
