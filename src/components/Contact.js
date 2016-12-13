@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-// import runtimeEnv from '@mars/heroku-js-runtime-env';
-// import axios from 'axios';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+import axios from 'axios';
+
+
 
 class Contact extends Component {
   constructor() {
     super()
 
-    // this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.updateName = this.updateName.bind(this)
     this.updateEmail = this.updateEmail.bind(this)
     this.updateMsg = this.updateMsg.bind(this)
@@ -29,23 +31,25 @@ class Contact extends Component {
   updateMsg(e){
     this.setState({msg:e.target.value})
   }
-  // handleFormSubmit(event) {
-  //   const env = runtimeEnv()
-  //   event.preventDefault();
-  //   const data = {name:this.state.name,email:this.state.email,msg:this.state.msg}
-  //   axios.post('/'{
-  //     "From":data.email,
-  //     "To": env.YAK_API_ADDRESS
-  //     "Subject":"ggdesign "+data.name,
-  //     "TextBody":data.msg
-  //   })
-  //   .then((function (response) {
-  //     console.log(response);
-  //   })
-  //   .catch(function(error){
-  //     console.log(error);
-  //   });
+  handleFormSubmit(event) {
+    event.preventDefault();
+    const details = {name:this.state.name,email:this.state.email,msg:this.state.msg}
+    const env = runtimeEnv()
 
+    window.TweenMax.set("#contact-form-button",{text:'Sending..'})
+
+    axios.post('https://postmail.invotes.com/send',{
+      "access_token":env.POSTMAIL_KEY,
+      "subject":"ggdesign.io " + details.email + "has sent you an email from "+details.name,
+      "message":details.msg
+    })
+    .then(function(response){
+      console.log(response)
+      window.TweenMax.set("#contact-form-button",{text:"Sent!"})
+    })
+    .catch(function(error){
+      console.log(error)
+    })}
 
   render() {
 
@@ -67,12 +71,12 @@ class Contact extends Component {
           <div id="right-box" ref="right">
               <p id="reach-header"><span id="reach">reach</span> out to me</p>
               <p className="subheading">employer interest, freelance inquiry or just for a chat</p>
-                <div id="contact-form">
-                  <input type="text" placeholder="Name" className="contact-input" ref="name" onChange={this.updateName}/>
-                  <input type="text" placeholder="Email" className="contact-input" ref="email" onChange={this.updateEmail}/>
-                  <textarea maxLength="500" required placeholder="What can I do for you?" className="contact-input" ref="msg" onChange={this.updateMsg}></textarea>
-                <div className="send-button"><a href="#" type="submit" className="contact-form_button">Send</a></div>
-              </div>
+              <form id="contact-form">
+                <input type="text" placeholder="Name" className="contact-input" ref="name" onChange={this.updateName}/>
+                <input type="text" placeholder="Email" className="contact-input" ref="email" onChange={this.updateEmail}/>
+                <textarea maxLength="500" required placeholder="What can I do for you?" className="contact-input" ref="msg" onChange={this.updateMsg}></textarea>
+                <button id="contact-form-button" type="submit" value="Send" className="contact-form_button" onClick={this.handleFormSubmit}>Send</button>
+              </form>
           </div>
         </div>
       </div>

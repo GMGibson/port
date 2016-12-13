@@ -461,18 +461,11 @@ h1 {
     left: 0;
   }
 }
-#contact-form div {
+#contact-form button {
   position: absolute;
   bottom: 0;
+  cursor: pointer;
   margin-bottom: 19px;
-}
-@media (max-width: 425px) {
-  #contact-form div {
-    margin-bottom: 50px;
-    margin-left: 50px;
-  }
-}
-#contact-form div a {
   text-decoration: none;
   color: #fff;
   padding: 10px 20px 10px 20px;
@@ -480,13 +473,19 @@ h1 {
   background: none;
   border: 2px solid #fff;
 }
-#contact-form div a:hover {
+@media (max-width: 425px) {
+  #contact-form button {
+    margin-bottom: 50px;
+    margin-left: 50px;
+  }
+}
+#contact-form button:hover {
   background: #fff;
   color: #000;
   font-weight: bold;
 }
 @media (max-width: 425px) {
-  #contact-form div a {
+  #contact-form button {
     position: absolute;
     right: 1;
     width: 50px;

@@ -19,7 +19,7 @@ class Splash extends Component {
   }
   navigate() {
     setTimeout(this.goToWelcome, 2200);
-    let timeline =  new window.TweenMax.to({}, 2, {
+    window.TweenMax.to({}, 2, {
       onUpdateParams:["{self}"],
       onUpdate:function(tl){
         let tlp = (tl.progress()*100)>>0;
