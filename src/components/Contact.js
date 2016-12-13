@@ -44,7 +44,7 @@ class Contact extends Component {
       data: {
         "subject": `${details.name},${details.email} has contacted you from ggdesign.io`,
         "text": `${details.msg}`,
-        "access_token": `${env.POSTMAIL_KEY}`
+        "access_token":env.POSTMAIL_KEY
       }
     }).catch(function (error) {
       if (error.response) {
