@@ -62,7 +62,7 @@ class Header extends Component {
         </ul>
       </div>
       {this.state.contactForm ? (
-        <div>
+        <div className="ctact-page">
           <Contact ref="ctact"/>
         </div>
       ) :
