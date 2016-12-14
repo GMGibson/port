@@ -31,14 +31,19 @@ class Contact extends Component {
   }
   handleFormSubmit(event) {
     event.preventDefault();
-    const env = process.env.NODE_ENV;
     axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
     const details = {name:this.state.name,email:this.state.email,msg:this.state.msg}
-
-    axios.post('http://postmail.invotes.com/send',{
+    axios.post('https://postmail.invotes.com/send',{
       "subject": `${details.name},${details.email} has contacted you from ggdesign.io`,
       "text": `${details.msg}`,
-      "access_token": env.POSTMAIL_KEY
+      "access_token": 'tbtja4qirosdxtdknzjrd2rv'
+    }).then(function (response) {
+      console.log('email sent successfully');      
+      const frm = document.getElementsByName('contact-form')[0];
+      frm.reset();
+      return false;
+    }).catch(function (error) {
+      console.log(error)
     })
   }
 
@@ -62,9 +67,9 @@ class Contact extends Component {
         </div>
         <div id="right-box-container">
           <div id="right-box" ref="right">
-              <p id="reach-header"><span id="reach">reach</span> out to me</p>
+              <p id="reach-header"><span className="reach">reach</span> out to me</p>
               <p className="subheading">employer interest, freelance inquiry or just for a chat</p>
-              <form id="contact-form">
+              <form id="contact-form" name="contact-form">
                 <input type="text" placeholder="Name" className="contact-input" ref="name" onChange={this.updateName}/>
                 <input type="text" placeholder="Email" className="contact-input" ref="email" onChange={this.updateEmail}/>
                 <textarea maxLength="500" required placeholder="What can I do for you?" className="contact-input" ref="msg" onChange={this.updateMsg}></textarea>
