@@ -12,7 +12,7 @@ const Chaos = () => {
               <li className="skill"><img className="skill-logo" src={Logo} alt=""></img></li>
               <li className="skill"><img className="skill-logo" src={Stylus} alt=""></img></li>
               <li className="skill"><img className="skill-logo" src={GSAP} alt=""></img></li>
-              <li className="card-right-button"><a href="https://chaos-bag.herokuapp.com/" target="_blank">Visit</a></li>
+              <li className="card-right-button"><a href="http://chaosbag.surge.sh/" target="_blank">Visit</a></li>
             </ul>
             <p>This application is built to be compatible with the Fantasy Flight Card Game, Arkham Horror: LCG.
             The purpose was to automate some of the tedium and book-keeping involved in playing this game where it mandated you draw consistantly out of a bag
