@@ -15,8 +15,7 @@ const Chaos = () => {
               <li className="card-right-button"><a href="http://chaosbag.surge.sh/" target="_blank">Visit</a></li>
             </ul>
             <p>This application is built to be compatible with the Fantasy Flight Card Game, Arkham Horror: LCG.
-            The purpose was to automate some of the tedium and book-keeping involved in playing this game where it mandated you draw consistantly out of a bag
-            of tokens to get the outcome of challenges. I built this application using React in order to port over to IOS/Android devices in the future utilizing React Native.
+            The purpose was to automate some of the tedium and book-keeping involved in playing this game. I built this application using React in order to port over to IOS/Android devices in the future utilizing React Native.
             </p>
             <div className="thumbs">
               <div className="thumb3"></div>
