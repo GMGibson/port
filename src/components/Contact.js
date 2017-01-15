@@ -38,7 +38,7 @@ class Contact extends Component {
       "text": `${details.msg}`,
       "access_token": 'tbtja4qirosdxtdknzjrd2rv'
     }).then(function (response) {
-      console.log('email sent successfully');      
+      console.log('email sent successfully');
       const frm = document.getElementsByName('contact-form')[0];
       frm.reset();
       return false;
@@ -58,7 +58,7 @@ class Contact extends Component {
             <p id="tag"><span id="name">grant</span> gibson</p>
             <p id="title">Front end web developer</p>
             <h4>About Me</h4>
-            <p id="desc">Hello, I am a former forester, turned web developer, based out of Murrells Inlet, SC. I am completely self-taught and driven to provide a unique and modern approach to functional web design and ui/ux development.<span>  Please feel free to <a href="#">contact</a> me</span>        about any potential freelance projects or long-term employment.</p>
+            <p id="desc">Hello, I am a former forester, turned web developer, based out of Murrells Inlet, SC. I am completely self-taught and driven to provide a unique and modern approach to functional web design and ui/ux development. Please feel free to contact me at <span><a href="#">dev@ggdesign.io</a></span> about any potential freelance projects or long-term employment.</p>
             <ul>
               <li className="socialLrg soc2"><a href="https://www.linkedin.com/in/ggdev" className="fa fa-linkedin" id="gh" target="_blank"></a></li>
               <li className="socialLrg soc3"><a href="https://codepen.io/gmgibson/" className="fa fa-codepen" id="cd" target="_blank"></a></li>

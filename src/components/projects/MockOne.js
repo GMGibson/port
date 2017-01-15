@@ -9,11 +9,12 @@ const MockSite = () => {
             <ul className="skill-list">
               <li className="skill"><i href="#" className="fa fa-html5"></i></li>
               <li className="skill"><i href="#" className="fa fa-css3"></i></li>
-              <li className="card-right-button"><a href="http://curved-effect.surge.sh/" target="_blank">Visit</a></li>
+              <li className="card-right-button"><a href="http://gg-layouts.surge.sh/" target="_blank">Visit</a></li>
             </ul>
-            <div className="card-right-details"><p>This is an example layout site using modern design principles for a potential business.
-            No frameworks or libraries were used. All effects and layouts were coded in raw CSS. This site uses flexbox for the majority of
-          its components to aid in responsive design.</p></div>
+            <div className="card-right-details"><p>This is a container site for housing layout designs and ideas for potential projects or client sites.
+              I've  built it using a mixture of React components and basic html and css. I've utilized the bulma.io css library for nice flexbox based
+              responsive designs.
+            </p></div>
             <div className="thumbs">
               <div className="thumb7"></div>
               <div className="thumb8"></div>
