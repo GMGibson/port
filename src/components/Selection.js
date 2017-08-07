@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import Portfolio from './projects/Portfolio'
 import Cloneflix from './projects/Cloneflix'
 import Chaos from './projects/Chaos'
-import MockSite from './projects/MockOne'
-
-
-
 
 class Selection extends Component {
   componentDidMount() {
@@ -29,21 +25,14 @@ class Selection extends Component {
       focusedItem = (
         <Chaos />
       )
-    } else if (this.props.location.pathname === '/projects/layout') {
-      focusedItem = (
-        <MockSite />
-      )
     }
 
     return (
-     <div className="wrapper-card">
-       <span id="border-wrap"></span>
+     <div className="wrapper-card">       
        <div className="wrapped-item">{focusedItem}</div>
      </div>
     )
   }
 }
-
-
 
 export default Selection

@@ -43,8 +43,7 @@ class Splash extends Component {
           <div className="s">s</div>
           <div className="o">o</div>
           <div className="N">N</div>
-        </div>
-        <button className="LeavePage" onClick={this.navigate}>Enter</button>
+        </div>        
         <div className="MidLetterRow">
             <LetterRow ltr="G" row="rowG"/>
             <LetterRow ltr="r" row="rowR"/>

@@ -13,10 +13,12 @@
     "@mars/heroku-js-runtime-env": "^3.0.0",
     "axios": "^0.15.3",
     "express": "^4.14.0",
+    "material-ui": "^0.18.7",
     "morgan": "^1.7.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
-    "react-router": "^2.8.1"
+    "react-router": "^2.8.1",
+    "react-tap-event-plugin": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

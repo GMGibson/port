@@ -15,16 +15,16 @@ import './css/style.css';
 
 const Root = () => {
   return (
-    <Router history={browserHistory}>
-      <Route path="/" component={Splash} />
-      <Route component={App}>
+    <Router history={browserHistory}>    
+      <Route path="/" component={Splash} />  
+      <Route component={App}>        
         <Route path="/welcome" component={Welcome} />
         <Route path="/projects" component={ProjectList}>
           <Route path="/projects/:id" component={Selection} />
         </Route>
         <Route path="/about" component={AboutMe} />
-      </Route>
-      <Route path="*" component={NotFound} />
+        <Route path="*" component={NotFound} />
+      </Route>      
     </Router>
   )
 }

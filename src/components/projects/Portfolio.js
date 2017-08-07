@@ -16,7 +16,7 @@ const Portfolio = () => {
               <li className="card-right-button"><a href="/">Visit</a></li>
             </ul>
             <div className="card-right-details">
-              <p>My personal portfolio is built 100% in React and react-router. It is a single page application with dynamic content being rendered based on the current route and changes in state. All animations are done using the Greensock Animation Platform, GSAP.
+              <p>My personal portfolio is built using React. It is a single page application with dynamic content being rendered with react router and changes in state. All animations are done using the Greensock Animation Platform, GSAP.
             Webpack and Stylus were also configured for development purposes. 
               </p>
             </div>

@@ -52,10 +52,10 @@ class Header extends Component {
     return (
     <div className="container">
       <div className="navigation">
-        <div className="label">
+        <div className="label">          
           <Link className="logo2" onClick={this.navigateHome}>gg</Link>
         </div>
-        <ul className="link-list"  ref="header">
+        <ul className="link-list" ref="header">
           <li className="item item1"><Link to="/projects" onClick={this.closeContact}>Projects</Link></li>
           <li className="item item2"><Link to="/about" onClick={this.closeContact}>About Me</Link></li>
           <li className="item item3"><a href="#" onClick={this.openContact}>Contact</a></li>

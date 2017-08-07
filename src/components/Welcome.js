@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 
 class Welcome extends Component {  
   componentDidMount(){
@@ -8,17 +7,14 @@ class Welcome extends Component {
     window.TweenMax.from('.amper',3,{opacity: 0, ease: 'easeIn'}).delay(2)
   }
   render() {
-    return (
+    return (         
       <div>
-      <div className="final"></div>
-      <div className="welcome">
-        <div className="show-left">
+        <div className="welcome-text">
           <p className="intro">Web + App + Ui</p>
           <p className="dev">Design <span className="amper">&</span>
           <br/>Development</p>
         </div>
-      </div>
-      </div>
+      </div>      
     )
   }
 }

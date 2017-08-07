@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class AboutMe extends Component {
   componentDidMount() {
     window.TweenMax.from('.aboutTitle', 1, {x:-100}).delay(.25)
@@ -15,22 +14,16 @@ class AboutMe extends Component {
     window.TweenMax.from('.section4',2.25,{opacity: 1})
     }
   render() {
+    const spanColor = {
+      color: '#DD2321'
+    }
     return (
       <div className="aboutContainer">
         <ul className="aboutList">
           <li className="pane about1">
             <section id="section1">
-              <p className="dets">I am a front-end developer based out of
+              <p className="dets">I am a developer <span style={spanColor}>&</span> designer based out of
               Murrells Inlet, SC.</p>
-            </section>
-            <section id="section2" className="sections">
-              <h4 className="aboutTitle">Design</h4>
-              <ul className="aboutDe">
-                <li>GreenSock</li>
-                <li>Adobe Illustrator</li>
-                <li>Affinity Designer</li>
-                <li>Adobe Photoshop</li>
-              </ul>
             </section>
             <section id="section3" className="sections">
               <h4 className="aboutTitle">Develop</h4>
@@ -42,8 +35,18 @@ class AboutMe extends Component {
                 <li>JQuery</li>                
                 <li>Stylus</li>
                 <li>Sass</li>
+                <li>Wordpress</li>
               </ul>
             </section>
+            <section id="section2" className="sections">
+              <h4 className="aboutTitle">Design</h4>
+              <ul className="aboutDe">
+                <li>GreenSock</li>                
+                <li>AutoCAD</li>
+                <li>ArcGIS</li>                
+                <li>Adobe Photoshop + Illustrator</li>
+              </ul>
+            </section>            
           </li>
           <li className="pane about3">
             <div className="section4"></div>

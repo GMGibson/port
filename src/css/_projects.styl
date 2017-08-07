@@ -1,0 +1,36 @@
+.wrapper
+  margin-top 30px
+  display grid
+  grid-template-columns repeat(3, 1fr)
+  grid-gap 10px
+  grid-row-gap 30px    
+  .pject-single
+    width 100%
+    height 300px    
+    margin 0 auto      
+    @media(max-width 400px){
+      width 100%
+    }
+    .pject-header
+      font-variant small-caps
+      text-align center
+      font-size 2em   
+      
+    .pject-img           
+      text-align center 
+      img        
+        max-width 50%
+  @media(max-width 400px) {    
+    grid-template-columns repeat(1, 1fr)
+    grid-row-gap 10px
+  }
+  @media(min-width 401px) {
+    grid-template-columns repeat(2, 1fr)
+    grid-row-gap 20px
+  }
+
+   
+  
+  
+  
+   

@@ -19,7 +19,7 @@ class ProjectList extends Component {
   }
   componentDidMount() {
     let tl = new window.TimelineLite()
-    tl.staggerFrom('.pject', 1.25, {opacity: 0}, .20).delay(.25)
+    tl.staggerFrom('.pject-single', 1.25, {opacity: 0}, .20).delay(.25)
   }
   closeSelection() {
     let tl = new window.TimelineLite()
@@ -31,23 +31,28 @@ class ProjectList extends Component {
   }
 
   render() {
-    const pList = [
-      {name: 'modern layouts', image:"/LO.jpg", link: "/projects/layout", key: "4"},
-      {name: 'portfolio', image:"/portThumb.jpg", link: "/projects/portfolio", key: "2"},
-      {name: 'quicktube', image:"/thumbs/QT1.jpg", link: "/projects/cloneflix", key: "1"},
-      {name: 'bag of chaos', image:"/chaos.jpg", link: "/projects/chaos", key: "3"}
-
+    const pList = [      
+      {name: 'portfolio', image:"/portThumb.jpg", link: "/projects/portfolio", key: "1"},
+      {name: 'l5r-decks.com', image: "/l5rdecks.png", link: "/projects/l5rdecks", key: "2"},      
+      {name: 'wordpress demo site', image:"/wpsite.jpg", link: "/projects/wpsite", key:"3"},
+      {name: 'youtube api demo', image:"/thumbs/QT1.jpg", link: "/projects/cloneflix", key: "4"},
+      {name: 'arkham game assistant', image:"/chaos.jpg", link: "/projects/chaos", key: "5"},
+      {name: '', image:"/csoon.jpg", link:"/projects/csoon", key: "6"}
+      
     ]
     return (
-      <div className="showcase-components">
-        <div className="show-right" ref="pjects">
+      <div>
+        <div className="wrapper" ref="pjects">
             {pList.map(i =>
-              <figure className="pject" key={i.key}>
-                <Link to={i.link}>
-                  <div className="pject-header">{i.name}</div>
-                  <img src={i.image}  style={i.style} alt="" onClick={this.handleClick}/>
-                </Link>
-              </figure>)}
+              <div className="pject-single">
+                <p className="pject-header">{i.name}</p>
+                <article className="pject-img" key={i.key}>
+                  <Link to={i.link} onClick={this.handleClick}>                    
+                    <img src={i.image} alt=""/>
+                  </Link>
+                </article>
+              </div>
+            )}
         </div>
         <div>
           {this.state.showOverlay ? (
