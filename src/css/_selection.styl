@@ -1,166 +1,44 @@
-// fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value)
-//   for $property in $properties
-//     {$property}: $min-value
-//   @media screen and (min-width: $min-vw)
-//     for $property in $properties
-//       {$property}: calc({$min-value} + {strip-unit($max-value - $min-value)} * (100vw - {$min-vw}) / {strip-unit($max-vw - $min-vw)})
-//   @media screen and (min-width: $max-vw)
-//     for $property in $properties
-//       {$property}: $max-value
-//
-// strip-unit($value)
-//   $value / ($value * 0 + 1)
+.selection   
+  display flex 
+  width calc(100vw - 40px)     
+  justify-content: center
+  align-items: center;  
+  border-right 1px solid black 
+.sel-left  
+  display flex
+  text-align: center
+  width: 50%  
+  flex-direction column
+  align-items center     
+.sel-left-content  
+  height 300px
+  text-align center
+.skillbar 
+  display flex  
+  justify-content: space-around
+  align-items: center
+  border-top 1px solid black
+  width 100%
+  height 100px
+.skill-solo > img 
+  height 100px  
+  width 100px 
+.sel-right img 
+  max-width 98%
+  
 
-#border-wrap
-  width 5px
-  opacity 1
-  background-color: white
-.wrapper-card
-  overflow-y: hidden;
-  overflow-x: hidden;
-  display: flex
-  flex-direction: row
-  position: fixed;
-  left 50%
-  margin-left -25%
-  top 50%
-  margin-top -20%
-  z-index 10
-  height 80vh
-  width 50vw
-  align-items center
-  justify-content center
-  background white
-  border: 6px solid black
-  @media(max-width 768px){
-    width 98%
-    height 80vh    
-    left 0
-    margin-left 1%
-  }
-  @media(max-width 425px){
-    height 75vh
-    width: 92%
-  }
-.card
-  height 100%
-  color black
-  padding 0px 10px
-  display: flex
-  flex-direction: column;
-  .card-content
-    height 100%
-    display: flex;
-    flex-direction: column;
-  h1
-    padding-top: 10px
-    color black
-    @media(max-width 425px){
-      font-size .7rem
-    }
-  div.card-right-content
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    p
-      @media(max-width 425px){
-        font-size .7rem
-      }
-    ul
-     list-style none
-     display flex
-     align-items: center
-     justify-content:space-between;
-     flex-wrap: wrap;
-     li.skill
-        height 50px
-        width 50px
-        padding-bottom 20px
-        img
-          @media(max-width 425px){
-            height 45px
-            width 45px
-            padding-bottom 0px
-          }
-       a
-         color black
-         border 1px solid black
-         text-decoration none
-         background none
-         margin-left 30px
-         padding 10px 40px
-         font-size 1.5rem
-         &:hover
-           color white
-           background black
-        @media(max-width 425px){
-          margin-left 0
-        }
-div.wrapped-item
-  height 100%
-  width 98%
+.back-button
+  cursor pointer
+  
+#backbtn-container
+  width 100%
+  display: flex    
+  align-items: center
+  justify-content: center
+  border-top 1px solid black
 
-thumbs(el)
-  background: url(el)
-  background-size:cover;
-  color black
-  border: 2px solid black
-  width 50%
-  margin 10px
-  height 20vh
-  @media(min-width 2560px){
-    height 30vh
-  }
-  @media(max-width 1024px){
-    height 15vh
-  }
-  @media(max-width 425px){
-    height 10vh
-  }
+#backbtn-container > img 
+  cursor pointer
+  &:hover    
+    transform: translateX(-5px)
 
-.thumbs
-  display: flex
-  @media(max-width 425px){
-    justify-content: space-between;
-  }
-
-.thumb
-  thumbs("/thumbs/port1.jpg")
-.thumb2
-  thumbs("/thumbs/port2.jpg")
-.thumb3
-  thumbs("/thumbs/chaos1.jpg")
-  @media(max-width 425px){
-    display none
-  }
-.thumb4
-  thumbs("/thumbs/chaos2.jpg")
-  @media(max-width 425px){
-    display none
-  }
-.thumb5
-  thumbs("/thumbs/QT3.jpg")
-.thumb6
-  thumbs("/thumbs/QT2.jpg")
-.thumb7
-  thumbs("/thumbs/LO1.jpg")
-.thumb8
-  thumbs("/thumbs/LO2.jpg")
-
-#overlay
-  position fixed
-  z-index 9
-  background-color rgba(0, 0, 0, 0.5);
-  width 100vw
-  height 100vh
-  top 0
-  left 0
-.skill-logo
-  padding none
-  margin none
-  height 90px
-  width 90px
-
-.fa
-  padding-top: 20px
-  font-size: 2.5em

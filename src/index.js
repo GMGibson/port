@@ -22,7 +22,7 @@ const Root = () => {
         <Route path="/projects" component={ProjectList}>
           <Route path="/projects/:id" component={Selection} />
         </Route>
-        <Route path="/about" component={AboutMe} />
+        <Route path="/about" component={AboutMe} />        
         <Route path="*" component={NotFound} />
       </Route>      
     </Router>

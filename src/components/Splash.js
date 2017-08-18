@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import LetterRow from './LetterRow';
 import {browserHistory} from 'react-router';
 
+
+
 class Splash extends Component {
   constructor() {
     super()
@@ -30,7 +32,8 @@ class Splash extends Component {
 
   render() {
     return (
-      <div className="ultra">
+      
+      <div className="ultra" onClick={this.navigate}>
         <div className="final">
           <div className="G">G</div>
           <div className="r">r</div>
@@ -56,9 +59,11 @@ class Splash extends Component {
             <LetterRow ltr="s" row="rowS"/>
             <LetterRow ltr="o" row="rowO"/>
             <LetterRow ltr="N" row="rowN"/>
-        </div>
+        </div>        
         {this.props.children}
+        <p>click anywhere to enter...</p>
       </div>
+      
     )
   }
 }

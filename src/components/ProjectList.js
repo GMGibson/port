@@ -2,68 +2,89 @@ import React, {Component} from 'react';
 import {Link} from 'react-router';
 import Overlay from './Overlay';
 import Selection from './Selection';
+import Paper from 'material-ui/Paper';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import  FlatButton from 'material-ui/FlatButton';
+import Popover from 'material-ui/Popover';
 
 class ProjectList extends Component {
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
     this.closeSelection = this.closeSelection.bind(this);
-
   };
   state = {
     showOverlay: false
   }
-  handleClick() {
+  handleClick() {        
+    window.TweenMax.to('.pject',1, {opacity: 1})        
     this.setState({showOverlay: !this.state.showOverlay})
-    window.TweenMax.to('.pject',1, {opacity: 1})
   }
   componentDidMount() {
     let tl = new window.TimelineLite()
-    tl.staggerFrom('.pject-single', 1.25, {opacity: 0}, .20).delay(.25)
+    tl.staggerFrom('.container', 1.25, {opacity: 0}, .20).delay(.25)    
   }
-  closeSelection() {
-    let tl = new window.TimelineLite()
-    this.state.showOverlay ?
-    tl.to('#border-wrap', .5, {height: 0})
-      .to('.wrapped-item', .5, {opacity: 0},'-=.5')
-      .to('.wrapper-card', .75, {width: 0, onComplete:this.handleClick})
-      : this.handleClick
-  }
+  closeSelection() {    
+    window.TweenMax.from('.pject',1, {opacity: 0})
+    this.setState({showOverlay: !this.state.showOverlay})
+  }  
 
   render() {
     const pList = [      
-      {name: 'portfolio', image:"/portThumb.jpg", link: "/projects/portfolio", key: "1"},
-      {name: 'l5r-decks.com', image: "/l5rdecks.png", link: "/projects/l5rdecks", key: "2"},      
-      {name: 'wordpress demo site', image:"/wpsite.jpg", link: "/projects/wpsite", key:"3"},
-      {name: 'youtube api demo', image:"/thumbs/QT1.jpg", link: "/projects/cloneflix", key: "4"},
-      {name: 'arkham game assistant', image:"/chaos.jpg", link: "/projects/chaos", key: "5"},
-      {name: '', image:"/csoon.jpg", link:"/projects/csoon", key: "6"}
+      { name: 'ggdesign.io', 
+        image:"/thumbs/portThumb.jpg", 
+        link: "/projects/portfolio",
+        travel:"ggdesign.io", 
+        desc: "Personal Portfolio"},
+      { name: 'l5r-decks.com', 
+        image: "/thumbs/l5rThumb.jpg", 
+        link: "/projects/fiverings",
+        travel: "http://www.l5r-decks.com", 
+        desc: "Wordpress Community Site"},      
+      { name: 'Layout Designs', 
+        image:"/thumbs/tavernThumb.jpg", 
+        link: "/projects/bar", 
+        desc: "Wordpress Site"},
+      { name: 'QuickTube', 
+        image:"/thumbs/qtThumbtwo.jpg", 
+        link: "/projects/cloneflix", 
+        travel: "https://afternoon-ocean-11074.herokuapp.com/",
+        desc: "React Web App"},
+      { name: 'arkham game assistant', 
+        image:"/thumbs/arkhamThumb.jpg", 
+        link: "/projects/chaos",
+        travel: "http://chaosbag.surge.sh/", 
+        desc: "React Web App"},
+      
       
     ]
-    return (
-      <div>
-        <div className="wrapper" ref="pjects">
-            {pList.map(i =>
-              <div className="pject-single">
-                <p className="pject-header">{i.name}</p>
-                <article className="pject-img" key={i.key}>
-                  <Link to={i.link} onClick={this.handleClick}>                    
-                    <img src={i.image} alt=""/>
+    return (      
+      <div className="container" ref="pjects">
+        {this.state.showOverlay ? 
+        <Selection 
+          location={this.props.location} 
+          key={this.index}
+          toggleView={this.handleClick}></Selection> 
+        : pList.map((i, index) =>
+            <Paper zDepth={2} className="pject-single" key={index}>                                                                                                      
+                <CardMedia className="project-thumb">
+                  <img src={i.image} alt=""/>                  
+                </CardMedia>                                
+                <CardHeader title={i.name} className="card-header"/>
+                <CardText className="card-text">
+                  <p>{i.desc}</p>
+                </CardText>
+                <CardActions>
+                  <Link to={i.link} onClick={this.handleClick}>
+                    <FlatButton label="Details"></FlatButton>                                                    
+                  </Link>  
+                  <Link to={i.travel} target="_blank">                                       
+                    <FlatButton label="Visit"></FlatButton>
                   </Link>
-                </article>
-              </div>
-            )}
-        </div>
-        <div>
-          {this.state.showOverlay ? (
-            <div className="selectionOverlay">
-              <Overlay toggleView={this.closeSelection} />
-              <Selection location={this.props.location} key={1}/>
-            </div>
-            ) :
-            null}
-        </div>
-      </div>
+                </CardActions>                
+            </Paper>              
+          )}          
+      </div>              
     )
   }
 }

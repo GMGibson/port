@@ -7,8 +7,8 @@ const Portfolio = () => {
   return (
       <div className="card">
         <div className="card-content">
-          <h1>Personal Portfolio</h1>
-          <div className="card-right-content">
+          <h1>ggdesign.io</h1>
+          <div className="logo-list">
             <ul className="skill-list">
               <li className="skill"><img className="skill-logo" src={Logo} alt=""></img></li>
               <li className="skill"><img className="skill-logo" src={Stylus} alt=""></img></li>
