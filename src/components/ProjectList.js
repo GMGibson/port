@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-import Overlay from './Overlay';
 import Selection from './Selection';
 import Paper from 'material-ui/Paper';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {CardActions, CardHeader, CardMedia,CardText} from 'material-ui/Card';
 import  FlatButton from 'material-ui/FlatButton';
-import Popover from 'material-ui/Popover';
+
 
 class ProjectList extends Component {
   constructor() {
@@ -34,7 +33,7 @@ class ProjectList extends Component {
       { name: 'ggdesign.io', 
         image:"/thumbs/portThumb.jpg", 
         link: "/projects/portfolio",
-        travel:"ggdesign.io", 
+        travel:"http://ggdesign.io/", 
         desc: "Personal Portfolio"},
       { name: 'l5r-decks.com', 
         image: "/thumbs/l5rThumb.jpg", 

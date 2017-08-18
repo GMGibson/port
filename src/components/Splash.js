@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import LetterRow from './LetterRow';
 import {browserHistory} from 'react-router';
-
-
-
+/* eslint-disable */
 class Splash extends Component {
   constructor() {
     super()
@@ -33,36 +31,45 @@ class Splash extends Component {
   render() {
     return (
       
-      <div className="ultra" onClick={this.navigate}>
-        <div className="final">
-          <div className="G">G</div>
-          <div className="r">r</div>
-          <div className="a">a</div>
-          <div className="n">n</div>
-          <div className="t">t</div>
-          <div className="g">G</div>
-          <div className="i">i</div>
-          <div className="b">b</div>
-          <div className="s">s</div>
-          <div className="o">o</div>
-          <div className="N">N</div>
-        </div>        
-        <div className="MidLetterRow">
-            <LetterRow ltr="G" row="rowG"/>
-            <LetterRow ltr="r" row="rowR"/>
-            <LetterRow ltr="a" row="rowA"/>
-            <LetterRow ltr="n" row="rown"/>
-            <LetterRow ltr="t" row="rowT"/>
-            <LetterRow ltr="g" row="rowg"/>
-            <LetterRow ltr="i" row="rowI"/>
-            <LetterRow ltr="b" row="rowB"/>
-            <LetterRow ltr="s" row="rowS"/>
-            <LetterRow ltr="o" row="rowO"/>
-            <LetterRow ltr="N" row="rowN"/>
-        </div>        
-        {this.props.children}
-        <p>click anywhere to enter...</p>
-      </div>
+        <div className="ultra" onClick={this.navigate}>
+          <div className="final">
+            <div className="G">G</div>
+            <div className="r">r</div>
+            <div className="a">a</div>
+            <div className="n">n</div>
+            <div className="t">t</div>
+            <div className="g">G</div>
+            <div className="i">i</div>
+            <div className="b">b</div>
+            <div className="s">s</div>
+            <div className="o">o</div>
+            <div className="N">N</div>
+          </div>        
+          <div className="MidLetterRow">
+              <LetterRow ltr="G" row="rowG"/>
+              <LetterRow ltr="r" row="rowR"/>
+              <LetterRow ltr="a" row="rowA"/>
+              <LetterRow ltr="n" row="rown"/>
+              <LetterRow ltr="t" row="rowT"/>
+              <LetterRow ltr="g" row="rowg"/>
+              <LetterRow ltr="i" row="rowI"/>
+              <LetterRow ltr="b" row="rowB"/>
+              <LetterRow ltr="s" row="rowS"/>
+              <LetterRow ltr="o" row="rowO"/>
+              <LetterRow ltr="N" row="rowN"/>
+          </div>        
+          <button id="clickthis" style={{
+            color:'black', 
+            background: 'none', 
+            border: 'none',      
+            position: 'relative',      
+            marginTop: '50%',
+            marginLeft: '50%',                                      
+            cursor:'pointer',
+            fontFamily:'Roboto Mono',
+            bottom: 0}}>Enter</button>
+          {this.props.children}                                
+        </div>             
       
     )
   }

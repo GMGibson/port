@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import RaisedButton from 'material-ui/RaisedButton'
 import Skillbar from './Skillbar'
 
 
@@ -73,11 +72,11 @@ class Selection extends Component {
           </div>
           <Skillbar skills={this.state.current.skills} />
           <div id="backbtn-container">        
-            <img src="/arrow-left.svg" height="60%" onClick={this.props.toggleView}/>
+            <img src="/arrow-left.svg" height="60%" onClick={this.props.toggleView} role="presentation"/>
           </div>
         </div>     
         <div className="sel-right">
-          <img src={this.state.current.image} />
+          <img src={this.state.current.image} role="presentation"/>
         </div>
       </div>     
     )
